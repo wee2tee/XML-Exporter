@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B215DA7-A8C7-43BB-BD01-24982586D98C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XML_Exporter</RootNamespace>
+    <AssemblyName>DBDe-Filing</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>3029f40e</NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>x_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>XML-Exporter.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Comm">
+      <HintPath>..\_DLL\Comm.dll</HintPath>
+    </Reference>
+    <Reference Include="CSGDBDConnectLib">
+      <HintPath>..\..\..\XBRL\to expressdll\CSGDBDConnectLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_DLL\CustomControl.dll</HintPath>
+    </Reference>
+    <Reference Include="DBFHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_DLL\DBFHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\XBRL\to expressdll\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.99.0\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebAPI">
+      <HintPath>..\_DLL\WebAPI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModel\Glacc.cs" />
+    <Compile Include="DataModel\Glbal.cs" />
+    <Compile Include="DataModel\Gljnlit.cs" />
+    <Compile Include="DataModel\Isinfo.cs" />
+    <Compile Include="DataModel\Isprd.cs" />
+    <Compile Include="DataModel\LOC_RegisterData.cs" />
+    <Compile Include="DataModel\MatchingData.cs" />
+    <Compile Include="DataModel\SRV_RegisterData.cs" />
+    <Compile Include="DataModel\Sccomp.cs" />
+    <Compile Include="HWModel\HardDrive.cs" />
+    <Compile Include="MiscClass\AccAmountInfo.cs" />
+    <Compile Include="MiscClass\AppResource.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiscClass\ComboboxItem.cs" />
+    <Compile Include="MiscClass\dataItem4Glacc.cs" />
+    <Compile Include="MiscClass\dataItem4Sccomp.cs" />
+    <Compile Include="MiscClass\DriveInfo.cs" />
+    <Compile Include="MiscClass\DriveInformation.cs" />
+    <Compile Include="MiscClass\HardwareInfo.cs" />
+    <Compile Include="MiscClass\Helper.cs" />
+    <Compile Include="MiscClass\Licensing.cs" />
+    <Compile Include="MiscClass\ServerResult.cs" />
+    <Compile Include="MiscClass\Taxonomy.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubWindow\CopyOptionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\CopyOptionsDialog.Designer.cs">
+      <DependentUpon>CopyOptionsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\CSGRequireDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\CSGRequireDialog.Designer.cs">
+      <DependentUpon>CSGRequireDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\ListTaxodesc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\ListTaxodesc.Designer.cs">
+      <DependentUpon>ListTaxodesc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\MessageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\MessageDialog.Designer.cs">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\RegisterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\RegisterDialog.Designer.cs">
+      <DependentUpon>RegisterDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\SearchBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\SearchBox.Designer.cs">
+      <DependentUpon>SearchBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\SelectComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\SelectComp.Designer.cs">
+      <DependentUpon>SelectComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\LoadingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\LoadingScreen.Designer.cs">
+      <DependentUpon>LoadingScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubWindow\XMLRequireDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubWindow\XMLRequireDialog.Designer.cs">
+      <DependentUpon>XMLRequireDialog.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SubWindow\CopyOptionsDialog.resx">
+      <DependentUpon>CopyOptionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\CSGRequireDialog.resx">
+      <DependentUpon>CSGRequireDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\ListTaxodesc.resx">
+      <DependentUpon>ListTaxodesc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\MessageDialog.resx">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\RegisterDialog.resx">
+      <DependentUpon>RegisterDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\SearchBox.resx">
+      <DependentUpon>SearchBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\SelectComp.resx">
+      <DependentUpon>SelectComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\LoadingScreen.resx">
+      <DependentUpon>LoadingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubWindow\XMLRequireDialog.resx">
+      <DependentUpon>XMLRequireDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="XML-Exporter.manifest">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="x_icon.ico" />
+    <None Include="Resources\icon_folder.png" />
+    <None Include="Resources\icon_csg.png" />
+    <None Include="Resources\icon_save.png" />
+    <None Include="Resources\icon_xml.png" />
+    <None Include="Resources\key_register.png" />
+    <None Include="Resources\zoom.png" />
+    <None Include="Resources\reload.png" />
+    <None Include="Resources\copy.png" />
+    <Content Include="XML-Exporter.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.99.0\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.99.0\build\net40\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.99.0\build\net40\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.99.0\build\net40\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
